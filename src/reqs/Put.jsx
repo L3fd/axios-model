@@ -33,7 +33,7 @@ const Put = () => {
 			<Title type="Put" />
 			<section>
 				<form
-					className="form"
+					className="form put"
 					onSubmit={handleSubmit}
 				>
 					<div className="form-row">
