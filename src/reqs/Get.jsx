@@ -24,7 +24,7 @@ const Get = () => {
 	return (
 		<>
 			<Title type="Get" />
-			<section className="section text-center">
+			<section className="section center">
 				<button
 					className="btn btn-primary"
 					onClick={fetchData}

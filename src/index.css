@@ -4,7 +4,7 @@ html {
 *,
 *:before,
 *:after {
-	box-sizing: inherit;
+	box-sizing: border-box;
 }
 
 body {
@@ -272,7 +272,7 @@ Axios Tutorial
 .section {
 	display: grid;
 	place-items: center;
-	max-width: var(--fixed-width);
+	width: calc(100vw - 22rem);
 	margin: 0 auto;
 	padding-bottom: 2rem;
 }
@@ -350,15 +350,17 @@ form[action$="destroy"] button {
 	clip: rect(0, 0, 0, 0);
 	white-space: nowrap;
 	border-width: 0;
+	overflow: hidden;
 }
 
 #root {
-	display: flex;
+	display: grid;
+	grid-template-columns: 22rem 1fr;
 	height: 100vh;
 	padding: 0;
 	margin: 0;
-	width: 100vw;
-	overflow: hidden;
+	width: 100%;
+	overflow-x: hidden;
 }
 
 #sidebar {
@@ -367,7 +369,11 @@ form[action$="destroy"] button {
 	border-right: solid 1px #e3e3e3;
 	display: flex;
 	flex-direction: column;
-	height: auto;
+	height: 110vh;
+	overflow: auto;
+	position: sticky;
+	position: -webkit-sticky;
+	top: 0%;
 }
 
 #sidebar > * {
@@ -435,7 +441,6 @@ form[action$="destroy"] button {
 
 #sidebar nav {
 	flex: 1;
-	overflow: scroll;
 	padding-top: 1rem;
 }
 
@@ -493,8 +498,8 @@ i {
 
 #detail {
 	flex: 1;
-	padding: 1rem 4rem;
-	width: 100%;
+	padding: 1rem 0rem;
+	width: calc(100vw - 20rem);
 }
 
 #detail.loading {
@@ -514,13 +519,13 @@ i {
 	grid-template-columns: repeat(2, 1fr);
 	align-items: center;
 	justify-content: center;
-	width: 100%;
 	gap: 1rem;
 	margin-top: 2rem;
 }
 .res {
 	background-color: var(--primary-100);
-	padding: 2rem;
+	padding: 1rem 0.5rem;
+	width: 20rem;
 	border-radius: 1rem;
 }
 .res-data {
@@ -535,10 +540,9 @@ pre {
 	color: white;
 	border-radius: 1rem;
 	text-align: start;
-	padding: 0.5rem;
-	overflow: scroll;
+	padding: 1rem;
 	width: fit-content;
-	height: 10rem;
+	height: auto;
 	margin: 0 auto;
 	margin-top: 1rem;
 }
@@ -547,7 +551,7 @@ pre {
 }
 .home {
 	display: grid;
-
+	width: calc(100vw - 22rem);
 	place-items: center;
 }
 .put {
